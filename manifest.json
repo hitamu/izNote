@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name"            : "eNo",
+  "description"     : "Easy note",
+  "short_name"      : "eno",
+  "version"         : "0.1",
+  "browser_action": {
+    "default_icon" : "images/favicon.ico"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "permissions": [
+    "debugger",
+    "storage"
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval' https://ssl.google-analytics.com; object-src 'self'"
+}

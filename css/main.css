@@ -1,0 +1,71 @@
+textarea { 
+   	border: none;
+    overflow: auto;
+    outline: none;
+    width: 100%;
+    resize: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+.selected {
+	color:#555;
+	text-decoration:none;
+	background-color:#f5f5f5
+}
+.btn-delete {
+	display: none;
+}
+.list-group-item:hover .btn-delete {
+	display: block;
+}
+.note-date {
+	opacity: 0.5;
+}
+.list-note {
+	overflow-y: scroll;
+	height: 430px;
+}
+.content-note {
+	font-size: 13px;
+}
+.clearfix .close {
+	display: none;
+}
+
+.clearfix:hover .close {
+	display: block;
+}
+.solution:focus{
+	outline: 0;
+}
+.solution {
+	border: none;
+	width: 100%;
+}
+.list-group-item {
+	font-size: 12px;
+}
+.rating {
+    color: #a9a9a9;
+    margin: 0;
+    padding: 0;
+}
+ul.rating {
+    display: inline-block;
+}
+.rating li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 1px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 18px;
+}
+.rating .filled {
+    color: #f6bb42;
+}
+.deadline {
+    margin-bottom: 5px;
+}
