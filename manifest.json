@@ -1,19 +1,23 @@
 {
   "manifest_version": 2,
-  "name"            : "eNo",
+  "name"            : "izNote",
   "description"     : "Easy note",
-  "short_name"      : "eno",
+  "short_name"      : "izNote",
   "version"         : "0.1",
   "browser_action": {
     "default_icon" : "images/favicon.ico"
   },
   "background": {
-    "scripts": ["background.js"],
-    "persistent": false
+    "persistent": false,
+    "page": "index.html"
+    // "scripts": ["background.js"]
   },
   "permissions": [
-    "debugger",
+    "contextMenus",
     "storage"
   ],
+  "icons": {
+    "16": "images/favicon.ico"
+  },
   "content_security_policy": "script-src 'self' 'unsafe-eval' https://ssl.google-analytics.com; object-src 'self'"
 }

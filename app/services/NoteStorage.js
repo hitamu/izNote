@@ -1,4 +1,5 @@
-eno.service('Storage', function($q){
+'use strict';
+izNo.service('Storage', function($q){
 	var self = this;
     this.data = [];
 

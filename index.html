@@ -14,11 +14,11 @@
     <script type="text/javascript" src="app/app.js"></script>
     <script type="text/javascript" src="app/controllers/Note.js"></script>
     <script type="text/javascript" src="app/services/NoteStorage.js"></script>
+    <script type="text/javascript" src="background.js"></script>
   </head>
   <body style="background-color: #f1f2f6;">
-    <!--documents-->
-    <div class="container documents" ng-app="enoApp">
-      <div class="example" ng-controller="NoteCtrl">
+    <div class="container documents" ng-app="izNo">
+      <div class="example" id="izNote" ng-controller="NoteCtrl">
         <div class="row">
           <div class="col-md-4">
             <div class="panel panel-primary">
@@ -67,6 +67,5 @@
           </div>
         </div>
       </div>
-    <!--footer-->
   </body>
 </html>
