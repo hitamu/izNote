@@ -2,70 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Notes</title>
-    <link rel="shortcut icon" href="images/favicon.ico"/>
-    <link rel="bookmark" href="images/favicon.ico"/>
-    <!-- site css -->
-    <link rel="stylesheet" href="css/site.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800,700,400italic,600italic,700italic,800italic,300italic" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <script type="text/javascript" src="libs/angular.min.js"></script>
-    <script type="text/javascript" src="libs/elastic.js"></script>
-    <script type="text/javascript" src="app/app.js"></script>
-    <script type="text/javascript" src="app/controllers/Note.js"></script>
-    <script type="text/javascript" src="app/services/NoteStorage.js"></script>
-    <script type="text/javascript" src="background.js"></script>
+    <title>izNote</title>
   </head>
-  <body style="background-color: #f1f2f6;">
-    <div class="container documents" ng-app="izNo">
-      <div class="example" id="izNote" ng-controller="NoteCtrl">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="panel panel-primary">
-              <div class="panel-body">
-                <div class="row">
-                  <div class="col-sm-3">
-                    <button type="button" class="btn btn-primary btn-block" ng-click="add()"><i class="search-icon glyphicon glyphicon-plus"></i></button>  
-                  </div>
-                  <div class="col-sm-9">
-                    <div class="search-only">
-                      <i class="search-icon glyphicon glyphicon-search"></i>
-                      <input type="text" class="form-control search-query" ng-model="query"/>
-                    </div>
-                  </div>
-                </div>
-                <div class="list-note">
-                  <div class="list-group">
-                    <a href="#" class="list-group-item" 
-                    ng-repeat="note in notes | filter: search track by $index"
-                    ng-click="show(notes.indexOf(note))">
-                      <button type="button" class="close btn-delete" data-dismiss="alert" aria-hidden="true" 
-                      ng-click="delete(notes.indexOf(note))">×</button>
-                      <h4 class="list-group-item-heading">{{ note.title || "New title here" | limitTo: 30 }}</h4>
-                      <small class="note-date">{{ note.created | date: 'medium' }}</small>
-                      <p class="list-group-item-text">{{ note.content || "New content here" | limitTo: 100 }}</p>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-8">
-            <div class="jumbotron">
-              <div class="jumbotron-contents">
-                <h4>
-                <textarea msd-elastic placeholder="Type your title here" 
-                ng-model="selected.title" ng-change="update(selected.id)">
-                </textarea>
-                </h4>
-                <textarea msd-elastic placeholder="Type your content here"
-                ng-model="selected.content" ng-change="update(selected.id)"
-                class="content-note">
-                </textarea>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+  <body>
+    <div id="container">
+    </div>
+    <script src="bundle.js"></script>
   </body>
 </html>
