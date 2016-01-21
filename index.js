@@ -3,28 +3,45 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
-var NoteItem = React.createClass({
-  render() {
+var NoteTitle = React.createClass({
+  render: function() {
     return (
-      <div>
-        <input type="text" defaultValue={this.props.note.title}/>
-        <textarea defaultValue={this.props.note.content}></textarea>
+      <input type="text" defaultValue={this.props.title}/>
+    );
+  }
+});
+
+var NoteContent = React.createClass({
+  render: function() {
+    return (
+      <textarea defaultValue={this.props.content}></textarea>
+    );
+  }
+});
+
+var NoteItem = React.createClass({
+  handleClick: function() {
+    console.log(this.props.note.title);
+  },
+  render: function() {
+    return (
+      <div onClick={this.handleClick}>
+        <NoteTitle title={this.props.note.title}/>
+        <NoteContent content={this.props.note.content}/>
       </div>
     );
   }
 });
 
 var ListNote = React.createClass({
-  render() {
-    var items = this.props.notes.map(note =>
-      <NoteItem note={note} key={note.id}/>
-    );
+  render: function() {
+    var items = this.props.notes.map(note => <NoteItem note={note} key={note.id}/>);
     return <div>{items}</div>;
   }
 });
 
-var ShowingNote = React.createClass({
-  render() {
+var ActiveNote = React.createClass({
+  render: function() {
     return <div>"List Note"</div>;
   }
 });
@@ -35,8 +52,8 @@ var data = [
   {id: 4, title: "z", content:"Dai loang ngoang"},
 ]
 var Application = React.createClass({
-  render() {
-    return <div><ListNote notes={data}/><ShowingNote/></div>;
+  render: function() {
+    return <div><ListNote notes={data}/><ActiveNote/></div>;
   }
 });
 
