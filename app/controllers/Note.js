@@ -1,7 +1,7 @@
 'use strict';
 izNo.controller('NoteCtrl', function($scope, Storage){
 
-	$scope.selected = {};
+	$scope.selected = {id: 0};
 	$scope.notes = [];
 	$scope.emptyNote = {
 		title: "",
@@ -18,6 +18,13 @@ izNo.controller('NoteCtrl', function($scope, Storage){
 	});
 	
 	$scope.add = function() {
+		if ($scope.notes.length == 0) {
+			$scope.notes.unshift({
+				title: $scope.selected.title,
+				content: $scope.selected.content,
+				created: new Date().getTime()
+			});
+		}
 		$scope.notes.unshift(angular.copy($scope.emptyNote));
 		$scope.query = "";
 		$scope.show(0);
@@ -32,6 +39,7 @@ izNo.controller('NoteCtrl', function($scope, Storage){
 
 	$scope.show = function(id) {
 		$scope.selected = $scope.notes[id];
+		$scope.selected.id = id;
 	};
 
 	$scope.update = function(id) {

@@ -24,9 +24,6 @@
             <div class="panel panel-primary">
               <div class="panel-body">
                 <div class="row">
-                  <div class="col-sm-3">
-                    <button type="button" class="btn btn-primary btn-block" ng-click="add()"><i class="search-icon glyphicon glyphicon-plus"></i></button>  
-                  </div>
                   <div class="col-sm-9">
                     <div class="search-only">
                       <i class="search-icon glyphicon glyphicon-search"></i>
@@ -62,7 +59,11 @@
                 ng-model="selected.content" ng-change="update(selected.id)"
                 class="content-note">
                 </textarea>
+                <div ng-show="selected.id==0 || notes.length==0 ">
+                    <button type="button" class="btn btn-primary btn-block" ng-click="add()"><i class="search-icon glyphicon glyphicon-save"></i></button>  
+                  </div>
               </div>
+              
             </div>
           </div>
         </div>
