@@ -1,8 +1,8 @@
 'use strict';
 izNo.service('Storage', function($q){
 	var self = this;
-    this.data = [];
-
+    self.data = [];
+    //chrome.storage.sync.set({note: []});
     this.load = function(callback) {
         chrome.storage.sync.get('note', function(keys) {
             if (keys.note != null) {
