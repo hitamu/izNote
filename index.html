@@ -14,7 +14,6 @@
     <script type="text/javascript" src="app/app.js"></script>
     <script type="text/javascript" src="app/controllers/Note.js"></script>
     <script type="text/javascript" src="app/services/NoteStorage.js"></script>
-    <script type="text/javascript" src="background.js"></script>
   </head>
   <body style="background-color: #f1f2f6;">
     <div class="container documents" ng-app="izNo">
@@ -50,7 +49,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-8">
+          <div class="col-md-8" ng-show="notes.length > 0">
             <div class="jumbotron">
               <div class="jumbotron-contents">
                 <h4>
