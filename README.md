@@ -13,6 +13,7 @@
 
 * Saving text from right menu on any page.
 * Global storage
+* Reminder
 
 ###Install
 
