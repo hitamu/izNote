@@ -1,5 +1,5 @@
 'use strict';
-izNo.service('Storage', function($q){
+izNo.service('storage', function(){
 	var self = this;
     this.data = [];
 

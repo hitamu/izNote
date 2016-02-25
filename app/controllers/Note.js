@@ -1,5 +1,5 @@
 'use strict';
-izNo.controller('NoteCtrl', function($scope, Storage){
+izNo.controller('NoteCtrl', function($scope, storage){
 
 	$scope.selected = {};
 	$scope.notes = [];
@@ -9,14 +9,19 @@ izNo.controller('NoteCtrl', function($scope, Storage){
 		created: new Date().getTime()
 	};
 
-	$scope.$watch('Storage.data', function() {
-		$scope.notes = Storage.data;
+	$scope.$watch('storage.data', function() {
+		$scope.notes = storage.data;
 	});
 
-	Storage.load(function(data){
+	$scope.$watch("notes", function(data){
+		storage.sync();
+	}, true);
+
+	storage.load(function(data){
 		$scope.notes = data;
+		if ($scope.notes.length > 0) $scope.show(0);
 	});
-	
+
 	$scope.add = function() {
 		$scope.notes.unshift(angular.copy($scope.emptyNote));
 		$scope.query = "";
@@ -39,17 +44,13 @@ izNo.controller('NoteCtrl', function($scope, Storage){
 		$scope.notes[id] = $scope.selected;
 	};
 
-	$scope.delete = function(id) {		
+	$scope.delete = function(id) {
 		$scope.notes.splice(id, 1);
 		$scope.show(0);
 	};
 
 	$scope.search = function (row) {
-	  return (angular.lowercase(row.title).indexOf($scope.query || '') !== -1 
+	  return (angular.lowercase(row.title).indexOf($scope.query || '') !== -1
 	  	||  angular.lowercase(row.content).indexOf($scope.query || '') !== -1);
 	};
-
-	$scope.$watch("notes", function(data){
-		Storage.sync();
-	}, true);
 })
