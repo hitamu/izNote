@@ -17,7 +17,7 @@
 ###Install
 
 * Download extension [link](https://github.com/hitamu/iznote/archive/master.zip) and extract to your local machine.
-* Go to *Extension Setting* on your Chrome browser [link](chrome://extensions/)
+* Go to *Extension Setting* on your Chrome browser chrome://extensions/
 * Select *Developer mode*
 * Choose Load unpackage extension and browse to extracted folder.
 * Enjoy!
