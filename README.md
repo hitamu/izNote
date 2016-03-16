@@ -1,4 +1,5 @@
 #IzNote
+![IzNote](http://i.imgur.com/NqcZNAZ.png)
 ##Quick and easy note chrome extension
 
 ###Feature
